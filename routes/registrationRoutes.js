@@ -6,18 +6,18 @@ const passport = require("passport");
 const AdminRegistration = require("../models/AdminRegistration");
 
 //creating a route
-router.get("/adminregister", (req,res)=>{
-    res.render("adminregister");
+router.get("/user-login", (req,res)=>{
+    res.render("user-login");
 });
 
-router.post("/adminregister", async(req,res)=>{
+router.post("/user-login", async(req,res)=>{
     try {
       const adminRegistration = new AdminRegistration(req.body);
       await AdminRegistration.register(adminRegistration,req.body.password, (error)=>{
         if(error){
             throw error
         }
-        res.redirect("/adminregister")
+        res.redirect("/user-login")
       });
     } catch (error) {
       res.status(400).send("Sorry something went wrong")
