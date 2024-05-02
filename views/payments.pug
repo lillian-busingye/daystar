@@ -14,29 +14,26 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-lg-0
         li.nav-item
-          a.nav-link.active(aria-current='page' href='/Daycare-App/index.html') HOME
+          a.nav-link.active(aria-current='page' href='/views/index.html') HOME
         li.nav-item
-          a.nav-link(href='/Daycare-App/about.html') ABOUT
+          a.nav-link(href='/views/about.html') ABOUT
         li.nav-item.dropdown
           a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
             | REGISTRATION
           ul.dropdown-menu
-            li
-              a.dropdown-item(href='/views/registerbaby.html') Register Baby
+            // <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li>
             li
               a.dropdown-item(href='/views/sitterregistration.html') BabySitter Registration
             li
               a.dropdown-item(href='/views/user-login.html') Administrator
             li
-              a.dropdown-item(href='/views/payments.html') Payments
+              a.dropdown-item(href='/views/payments.html') Payment for registerbaby
             li
               a.dropdown-item(href='/views/procurement.html') Procurement
             li
               a.dropdown-item(href='/views/checkinandcheckout.html') CheckinandCheckout
-        .d-flex(role='search')
-          button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') DONATE TO US
       .d-flex(role='search')
-        button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') CONTACT US
+        button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') DONATE TO US
       .social-icons
         a.icon.facebook(href='#')
           i.fab.fa-facebook-f
@@ -49,7 +46,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
         a.icon.youtube(href='#')
           i.fab.fa-youtube
 .container.mt-3
-  h2 PAYMENT FORM
+  h2 PAYMENT REGISTRATION FORM
   form(id='container mt-3' action='#' method='POST')
     p
       | Half day babysitting is 15,000Ugx, whereas full day is 30,000 ugx. However monthly  payments are acceptable.
@@ -65,8 +62,20 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
       label.form-label(for='exampleInputEmail1') Phone number :
       input#number.form-control(type='number' aria-describedby='emailHelp' name='number')
     .mb-3
+      label.form-label(for='exampleInputEmail1') NIN :
+      input#nin.form-control(type='text' aria-describedby='emailHelp' name='nin')
+    .mb-3
       label.form-label(for='exampleInputEmail1') Baby&apos;s Full Name :
-      input#name.form-control(type='text' aria-describedby='emailHelp' name='name')
+      input#name.form-control(type='text' aria-describedby='emailHelp' name='baby')
+    .mb-3
+      label.form-label(for='exampleInputEmail1') Baby&apos;s age:
+      input#age.form-control(type='text' aria-describedby='emailHelp' name='age')
+    .mb-3
+      label.form-label(for='exampleInputEmail1') Next of kin Full Name./Other Guardian:
+      input#kin.form-control(type='text' aria-describedby='emailHelp' name='kin')
+    .mb-3
+      label.form-label(for='exampleInputEmail1') Contact of other Guardian:
+      input#Contact.form-control(type='number' aria-describedby='emailHelp' name='Contact')
     .mb-3
       label.form-label(for='exampleInputEmail1') Amount Paid:
       input#amount.form-control(type='number' aria-describedby='emailHelp' name='amount')
@@ -98,5 +107,8 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     button.btn.btn-primary(type='submit') Submit
 script(src='../public/js/JS/payments.js')
 footer.container.mt-3
+  p LOCATION: Kabalagala
+  p CONTACT:0123456789
+  p EMAIL:daystardaycare@gmail.com
   p  &copy; 2024 daystar. All rights Reserved
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous')

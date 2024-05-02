@@ -4,7 +4,7 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Daystar Daycare
   link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH' crossorigin='anonymous')
-  link(rel='stylesheet' href='/Daycare-App/style.css')
+  link(rel='stylesheet' href='/public/css/style.css')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
 nav.navbar.navbar-expand-lg.bg-body-tertiary
   .container-fluid
@@ -14,29 +14,26 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-lg-0
         li.nav-item
-          a.nav-link.active(aria-current='page' href='/Daycare-App/index.html') HOME
+          a.nav-link.active(aria-current='page' href='/views/index.html') HOME
         li.nav-item
-          a.nav-link(href='/Daycare-App/about.html') ABOUT
+          a.nav-link(href='/views/about.html') ABOUT
         li.nav-item.dropdown
           a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
             | REGISTRATION
           ul.dropdown-menu
-            li
-              a.dropdown-item(href='/views/registerbaby.html') Register Baby
+            // <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li>
             li
               a.dropdown-item(href='/views/sitterregistration.html') BabySitter Registration
             li
               a.dropdown-item(href='/views/user-login.html') Administrator
             li
-              a.dropdown-item(href='/views/payments.html') Payments
+              a.dropdown-item(href='/views/payments.html') Payment for registerbaby
             li
               a.dropdown-item(href='/views/procurement.html') Procurement
             li
               a.dropdown-item(href='/views/checkinandcheckout.html') CheckinandCheckout
-        .d-flex(role='search')
-          button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') DONATE TO US
       .d-flex(role='search')
-        button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') CONTACT US
+        button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') DONATE TO US
       .social-icons
         a.icon.facebook(href='#')
           i.fab.fa-facebook-f
@@ -56,17 +53,17 @@ header.container.mt-3(style='border-style: none;')
   #carouselExampleAutoplaying.carousel.slide(data-bs-ride='carousel')
     .carousel-inner(style='width: 100%;')
       .carousel-item.active
-        img.d-block.w-100(src='images/ABC-Kidcare-Logo-small@2x-1.png' alt='letters')
+        img.d-block.w-100(src='/Daycare-App/images/ABC-Kidcare-Logo-small@2x-1.png' alt='letters')
       .carousel-item
-        img.d-block.w-100(src='images/building.jpeg' alt='building')
+        img.d-block.w-100(src='/Daycare-App/images/building.jpeg' alt='building')
       .carousel-item
-        img.d-block.w-100(src='images/images.webp' alt='kids')
+        img.d-block.w-100(src='/Daycare-App/images/images.webp' alt='kids')
       .carousel-item
-        img.d-block.w-100(src='images/johannesburg-south-africa-june-young-african-kids-small-creche-daycare-preschool-young-african-kids-small-creche-daycare-181063826.webp' alt='babies')
+        img.d-block.w-100(src='/Daycare-App/images/johannesburg-south-africa-june-young-african-kids-small-creche-daycare-preschool-young-african-kids-small-creche-daycare-181063826.webp' alt='babies')
       .carousel-item
-        img.d-block.w-100(src='images/school-playground.jpeg' alt='school-playground')
+        img.d-block.w-100(src='/Daycare-App/images/school-playground.jpeg' alt='school-playground')
       .carousel-item
-        img.d-block.w-100(src='images/teacher.webp' alt='teacher')
+        img.d-block.w-100(src='/Daycare-App/images/teacher.webp' alt='teacher')
     button.carousel-control-prev(type='button' data-bs-target='#carouselExampleAutoplaying' data-bs-slide='prev')
       span.carousel-control-prev-icon(aria-hidden='true')
       span.visually-hidden Previous
@@ -84,5 +81,8 @@ section.container.mt-3(style='border: 5px solid red;')
   div
     button.signup-button Sign Up
 footer.container.mt-3
+  p LOCATION: Kabalagala
+  p CONTACT:0123456789
+  p EMAIL:daystardaycare@gmail.com
   p  &copy; 2024 daystar. All rights Reserved
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz' crossorigin='anonymous')

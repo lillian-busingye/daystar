@@ -7,8 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/public/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
+  
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">DAYSTAR DAYCARE</a>
@@ -23,6 +25,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="/views/about.html">ABOUT</a>
               </li>
+             
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   REGISTRATION
@@ -31,7 +34,7 @@
                   <!-- <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li> -->
                   <li><a class="dropdown-item" href="/views/sitterregistration.html">BabySitter Registration</a></li>
                   <li><a class="dropdown-item" href="/views/user-login.html">Administrator</a></li>
-                  <li><a class="dropdown-item" href="/views/payments.html">Payment for babyregister</a></li>
+                  <li><a class="dropdown-item" href="/views/payments.html">Payment for registerbaby</a></li>
                   <li><a class="dropdown-item" href="/views/procurement.html">Procurement</a></li> 
                   <li><a class="dropdown-item" href="/views/checkinandcheckout.html">CheckinandCheckout</a></li>
 
@@ -48,33 +51,61 @@
               <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
               <a href="#" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
               <a href="#" class="icon youtube"><i class="fab fa-youtube"></i></a>
+              
             </div>
           </div>
         </div>
       </nav>
-      <div class="container">
-      <h2> LOGIN</h2>
-      <form id="loginForm" action="#" method="POST">
-        <div class="form-group">
-          <label for="username">Email:</label>
-          <input type="text" id="email" name="email">
-        </div>
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" name="username">
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" id="password" name="password">
-        </div>
-        <button type="submit">LOGIN</button>
-      </form>
+  
+    <header class="container mt-3" style="border-style: none;">
+<div class="container mt-3" style="border-style: none; width: 100%; font-size: 50px;">
+    <h1><b>WELCOME TO DAYSTAR DAYCARE</b></h1>
+    <P class="motto" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: blue;">"Your Child's Home Away from Home"</P>
+</div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" style="width: 100%;">
+    <div class="carousel-item active">
+      <img src="/Daycare-App/images/ABC-Kidcare-Logo-small@2x-1.png" class="d-block w-100" alt="letters">
+    </div>
+    <div class="carousel-item">
+      <img src="/Daycare-App/images/building.jpeg" class="d-block w-100" alt="building">
+    </div>
+    <div class="carousel-item">
+      <img src="/Daycare-App/images/images.webp" class="d-block w-100" alt="kids">
+    </div>
+    <div class="carousel-item">
+      <img src="/Daycare-App/images/johannesburg-south-africa-june-young-african-kids-small-creche-daycare-preschool-young-african-kids-small-creche-daycare-181063826.webp" class="d-block w-100" alt="babies">
+    </div>
+    <div class="carousel-item">
+      <img src="/Daycare-App/images/school-playground.jpeg" class="d-block w-100" alt="school-playground">
+    </div>
+    <div class="carousel-item">
+      <img src="/Daycare-App/images/teacher.webp" class="d-block w-100" alt="teacher">
+    </div>
 
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </header>
 
-<div id="message"></div>
+    <section class="container mt-3" style="border: 5px solid red;">
+      <h1>JOIN OUR MAILING LIST.</h1>
+      <P>Be the first to hear about our news and upcoming special events regarding our child care and early childhood education, in general.</P>
+      <div class="mb-3" style="width: 60%;">
+      <label for="exampleInputEmail1" class="form-label">Email Address :</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
       </div>
-        <script src="../public/js/JS/login.js"></script>
-        
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+         <div>
+          <button class="signup-button">Sign Up</button></div> 
+    </section>
 <footer class="container mt-3">
   <p>LOCATION: Kabalagala</p>
   <p>CONTACT:0123456789</p>

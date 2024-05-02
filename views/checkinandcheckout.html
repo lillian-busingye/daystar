@@ -18,10 +18,10 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/Daycare-App/index.html">HOME</a>
+                <a class="nav-link active" aria-current="page" href="/views/index.html">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Daycare-App/about.html">ABOUT</a>
+                <a class="nav-link" href="/views/about.html">ABOUT</a>
               </li>
              
               <li class="nav-item dropdown">
@@ -29,21 +29,19 @@
                   REGISTRATION
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li>
+                  <!-- <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li> -->
                   <li><a class="dropdown-item" href="/views/sitterregistration.html">BabySitter Registration</a></li>
                   <li><a class="dropdown-item" href="/views/user-login.html">Administrator</a></li>
-                  <li><a class="dropdown-item" href="/views/payments.html">Payments</a></li>
+                  <li><a class="dropdown-item" href="/views/payments.html">Payment for registerbaby</a></li>
                   <li><a class="dropdown-item" href="/views/procurement.html">Procurement</a></li> 
                   <li><a class="dropdown-item" href="/views/checkinandcheckout.html">CheckinandCheckout</a></li>
 
                 </ul>
               </li>
-              <div class="d-flex" role="search">
-                <button class="btn btn-outline-success" type="submit" style="margin-right: 40px;">DONATE TO US</button>
-              </div>
+              
             </ul>
             <div class="d-flex" role="search">
-              <button class="btn btn-outline-success" type="submit" style="margin-right: 40px;">CONTACT US</button>
+              <button class="btn btn-outline-success" type="submit" style="margin-right: 40px;">DONATE TO US</button>
             </div>
             <div class="social-icons">
               <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
@@ -70,7 +68,7 @@
                 <!-- <input type="password" class="form-control" id="exampleInputPassword1"> -->
                 <select name="name" id="title">
                   <option value="">SELECT</option>
-                  <option value="">Parent</option>
+                  <option value="">Parent/Guardian</option>
                   <option value="">Guest</option>
                   <option value="">Daystar Baby-sitter</option>
                   <option value="">Daystar-worker</option>
@@ -91,6 +89,11 @@
             <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
           </div>
           <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">NIN:</label>
+            <input type="text" class="form-control" id="contact" aria-describedby="emailHelp" name="nin">
+            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+          </div>
+          <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Reason for Checkin :</label>
           <input type="text" class="form-control" id="reason" aria-describedby="emailHelp" name="reason">
           <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
@@ -107,7 +110,6 @@
                     <label for="exampleInputEmail1" class="form-label">Time Out:</label>
                     <input type="time" class="form-control" id="out" aria-describedby="emailHelp" name="out">
                     </div>
-
 
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Gender :</label>
@@ -129,7 +131,9 @@
         <script src="../public/js/JS/checkinandcheckout.js"></script>
         
 <footer class="container mt-3">
-   
+  <p>LOCATION: Kabalagala</p>
+  <p>CONTACT:0123456789</p>
+  <p>EMAIL:daystardaycare@gmail.com</p>
     <p> &copy; 2024 daystar. All rights Reserved</p>
 
 </footer>

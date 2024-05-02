@@ -14,6 +14,10 @@ contact:{
     type:Number,
     trim:true
 },
+nin:{
+    type:String,
+    trim:true
+},
 reason:{
     type:String,
     trim:true

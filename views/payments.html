@@ -18,33 +18,29 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/Daycare-App/index.html">HOME</a>
+                <a class="nav-link active" aria-current="page" href="/views/index.html">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/Daycare-App/about.html">ABOUT</a>
+                <a class="nav-link" href="/views/about.html">ABOUT</a>
               </li>
-             
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   REGISTRATION
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li>
+                  <!-- <li><a class="dropdown-item" href="/views/registerbaby.html">Register Baby</a></li> -->
                   <li><a class="dropdown-item" href="/views/sitterregistration.html">BabySitter Registration</a></li>
                   <li><a class="dropdown-item" href="/views/user-login.html">Administrator</a></li>
-                  <li><a class="dropdown-item" href="/views/payments.html">Payments</a></li>
+                  <li><a class="dropdown-item" href="/views/payments.html">Payment for registerbaby</a></li>
                   <li><a class="dropdown-item" href="/views/procurement.html">Procurement</a></li> 
                   <li><a class="dropdown-item" href="/views/checkinandcheckout.html">CheckinandCheckout</a></li>
 
                 </ul>
               </li>
-              <div class="d-flex" role="search">
-                <button class="btn btn-outline-success" type="submit" style="margin-right: 40px;">DONATE TO US</button>
-              </div>
             </ul>
             <div class="d-flex" role="search">
-              <button class="btn btn-outline-success" type="submit" style="margin-right: 40px;">CONTACT US</button>
+              <button class="btn btn-outline-success" type="submit" style="margin-right: 40px;">DONATE TO US</button>
             </div>
             <div class="social-icons">
               <a href="#" class="icon facebook"><i class="fab fa-facebook-f"></i></a>
@@ -57,7 +53,7 @@
         </div>
       </nav>
       <div class="container mt-3">
-      <h2>PAYMENT FORM</h2>
+      <h2>PAYMENT REGISTRATION FORM</h2>
       <form id="container mt-3" action="#" method="POST">
         <p>
           Half day babysitting is 15,000Ugx, whereas full day is 30,000 ugx. However monthly  payments are acceptable.
@@ -77,9 +73,25 @@
               <input type="number" class="form-control" id="number" aria-describedby="emailHelp" name="number">
               </div>
               <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Baby's Full Name :</label>
-                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="name">
+                <label for="exampleInputEmail1" class="form-label">NIN :</label>
+                <input type="text" class="form-control" id="nin" aria-describedby="emailHelp" name="nin">
                 </div>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Baby's Full Name :</label>
+                <input type="text" class="form-control" id="name" aria-describedby="emailHelp" name="baby">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Baby's age:</label>
+                  <input type="text" class="form-control" id="age" aria-describedby="emailHelp" name="age">
+                  </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Next of kin Full Name./Other Guardian:</label>
+                  <input type="text" class="form-control" id="kin" aria-describedby="emailHelp" name="kin">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Contact of other Guardian:</label>
+                    <input type="number" class="form-control" id="Contact" aria-describedby="emailHelp" name="Contact">
+                    </div>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Amount Paid:</label>
                   <input type="number" class="form-control" id="amount" aria-describedby="emailHelp" name="amount">
@@ -122,7 +134,9 @@
         <script src="../public/js/JS/payments.js"></script>
         
 <footer class="container mt-3">
-    
+     <p>LOCATION: Kabalagala</p>
+        <p>CONTACT:0123456789</p>
+        <p>EMAIL:daystardaycare@gmail.com</p>
     <p> &copy; 2024 daystar. All rights Reserved</p>
 
 </footer>

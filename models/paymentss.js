@@ -14,7 +14,11 @@ number:{
     type:Number,
     trim:true
 },
-name:{
+nin:{
+    type:Number,
+    trim:true
+},
+baby:{
     type:String,
     trim:true
 },
@@ -22,8 +26,16 @@ amount:{
     type:String,
     trim:true
 },
-name:{
+age:{
     type:String,
+    trim:true
+},
+kin:{
+    type:String,
+    trim:true
+},
+contact:{
+    type:Number,
     trim:true
 },
 card:{

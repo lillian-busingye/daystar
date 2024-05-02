@@ -14,6 +14,10 @@ kin:{
     type:String,
     trim:true
 },
+phone:{
+    type:Number,
+    trim:true
+},
 age:{
     type:String,
     trim:true
