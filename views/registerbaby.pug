@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Baby Registration Form
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
+.container.my-5
+  h2.text-center Baby Registration Form
+  form(method="POST" action="/register")
+    // Baby Information
+    .mb-3
+      label.form-label(for='babyName') Baby&apos;s Name:
+      input#babyName.form-control(type='text' placeholder="Enter baby's name" name="name")
+    .mb-3
+      label.form-label(for='babyDOB') Date of Birth:
+      input#babyDOB.form-control(type='date' name='date')
+    .mb-3
+      label.form-label(for='gender') Gender:
+      select#gender.form-select
+        option(value='' selected='' disabled='') Choose...
+        option(value='male') Male
+        option(value='female') Female
+        option(value='other') Other
+    // Parent/Guardian Information
+    .mb-3
+      label.form-label(for='parentName') Parent/Guardian&apos;s Name:
+      input#parentName.form-control(type='text' placeholder="Enter parent's/guardian's name" name="parent")
+    .mb-3
+      label.form-label(for='contactNumber') Contact Number:
+      input#contactNumber.form-control(type='tel' placeholder='Enter contact number' name='contact')
+    .mb-3
+      label.form-label(for='email') Email Address:
+      input#email.form-control(type='email' placeholder='Enter email address' name='email')
+    // Address
+    .mb-3
+      label.form-label(for='address') Address:
+      textarea#address.form-control(rows='3' placeholder='Enter address' name='address')
+    // Submission
+    button.btn.btn-primary(type='submit') Submit
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

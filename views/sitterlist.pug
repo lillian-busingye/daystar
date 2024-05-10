@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    title Sitters Form
+    // Bootstrap CSS
+    link(
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
+      )
+    // Custom CSS
+    link(
+      href="/user/Babysitters/sit.css" 
+      rel="stylesheet"
+      )
+  body
+    .container
+      h2 Sitters Dashboard
+      form#sittersForm
+        // Your form fields
+      // Sitters Table
+      h2 Sitters List
+      table.table
+        thead
+          tr
+            th Full Name
+            th Location
+            th Date of Birth
+            th Gender
+            th Next of Kin
+            th NIN
+            th Recommender's Name(s)
+            th Religion
+            th Level of Education
+            th Sitter Number
+            th Contact
+            th Update
+            th Delete
+        tbody
+         if sitters.length
+         each sitter in sitters
+          tr
+            td #{sitter.name}
+            td #{sitter.location}
+            td #{sitter.dateofBirth}
+            td #{sitter.gender}
+            td #{sitter.NextofKin}
+            td #{sitter.NIN}
+            td #{sitter.RecommendersName}
+            td #{sitter.Religion}
+            td #{sitter.LevelofEducation}
+            td #{sitter. SitterNumber}
+            td #{sitter.Contact}
+            td 
+              a.btn.btn-primary.btn-sm(href="/sittersupdate/"+ sitter._id) Update
+            td 
+               a.btn.btn-danger.btn-sm(href="/delete") Delete 
+
+
+          // More rows can be added dynamically
+    footer.footer
+      div
+        p Daystar Management 2024
+    // Bootstrap Bundle with Popper
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js")
+    // Your custom JavaScript
+    script(src="/Babysitters/occupy.js")

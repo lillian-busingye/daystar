@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Baby Registration Form</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h2 class="text-center">Baby Registration Form</h2>
+    <form>
+      <!-- Baby Information -->
+      <div class="mb-3">
+        <label for="babyName" class="form-label">Baby's Name:</label>
+        <input type="text" class="form-control" id="babyName" placeholder="Enter baby's name">
+      </div>
+
+      <div class="mb-3">
+        <label for="babyDOB" class="form-label">Date of Birth:</label>
+        <input type="date" class="form-control" id="babyDOB">
+      </div>
+
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gender:</label>
+        <select class="form-select" id="gender">
+          <option value="" selected disabled>Choose...</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <!-- Parent/Guardian Information -->
+      <div class="mb-3">
+        <label for="parentName" class="form-label">Parent/Guardian's Name:</label>
+        <input type="text" class="form-control" id="parentName" placeholder="Enter parent's/guardian's name" >
+      </div>
+
+      <div class="mb-3">
+        <label for="contactNumber" class="form-label">Contact Number:</label>
+        <input type="tel" class="form-control" id="contactNumber" placeholder="Enter contact number">
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address:</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter email address">
+      </div>
+
+      <!-- Address -->
+      <div class="mb-3">
+        <label for="address" class="form-label">Address:</label>
+        <textarea class="form-control" id="address" rows="3" placeholder="Enter address"></textarea>
+      </div>
+
+      <!-- Submission -->
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    title Administration Register Form
+    link(
+      href="/css/email.css" 
+      rel="stylesheet"
+      )
+  body
+    .container
+      h2 Administration Register Form
+      form#registerForm( action="/adminregister" method="POST")
+        .form-group
+          label(for="name") Name
+          input#name(
+            name="Fullname"type="text"
+            )
+        .form-group
+          label(for="email") Email
+          input#email(
+            name="email" 
+            type="email"
+            )
+        .form-group
+          label(for="role") Role
+          input#role(
+            name="role" 
+            type="role"
+            value= "admin" 
+            )
+        .form-group
+          label(for="password") Password
+          input#password(
+            name="password" 
+            type="password"
+            )
+               button(type="submit") Register
+         // Footer
+    footer.footer.bg-light.text-center.py-4
+      .container
+        span.text-muted © 2024 Daycare. All rights reserved.
+    script(src="/adminregister/fix.js")
+</body>

@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const cors = require("cors");
 const passport = require('passport');
 const expressSession = require("express-session")({
     secret:"secret",
@@ -12,37 +13,45 @@ const expressSession = require("express-session")({
   require('dotenv').config();
 
   //import register model with user details
-  const AdminRegistration = require("./models/AdminRegistration");
+  const administer = require("./models/administer");
 
 //import routes
-const registrationRoutes = require("./routes/registrationRoutes");
+// const registrationRoutes = require("./routes/registrationRoutes");
+const registerbabyRoutes = require("./routes/registerbabyRoutes");
+const landingRoutes = require("./routes/landingRoutes");
+const adminregisterRoutes = require("./routes/adminregisterRoutes");
+const sitterRoutes = require("./routes/sitterRoutes");
 
+// instantiations
+const app = express();
 
-const port =3003;
+// const port =3003;
 
 //configurations
-//setting the database connection to mongoose
 mongoose.connect(process.env.DATABASE,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-  
-  mongoose.connection
-    .once('open', () => {
-      console.log('Mongoose connection open');
-    })
-    .on('error', err => {
-      console.error(`Connection error: ${err.message}`);
-   });
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-//setting the view engine to pug
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
+mongoose.connection
+  .once("open", () => {
+    console.log("Mongoose connection open");
+  })
+  .on("error", err => {
+    console.error(`Connection error: ${err.message}`);
+ });
 
+app.set("view engine","pug"); // setting the view engine to pug
+app.set("views", path.join(__dirname,"views")); //specify the directory where the views are found
 //middleware
-app.use(express.static(path.join(__dirname, "public"))) // Set directory for static files
+app.use(express.static(path.join(__dirname, "public")))//set directory fot static fires 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
+app.use(cors());
+// app.use(express.static(path.join(__dirname, "public"))) // Set directory for static files
+// app.use(express.urlencoded({extended:true}));
+// app.use(express.json());
+// app.use(cors());
 
 //express-session configurations
 app.use(expressSession); //using express sessions
@@ -50,12 +59,16 @@ app.use(passport.initialize()); //helps to keep track of the users session in th
 app.use(passport.session());
 
 //passport configurations
-passport.use(AdminRegistration.createStrategy());
-passport.serializeUser(AdminRegistration.serializeUser());
-passport.deserializeUser(AdminRegistration.deserializeUser());
+passport.use(administer.createStrategy());
+passport.serializeUser(administer.serializeUser());
+passport.deserializeUser(administer.deserializeUser());
 
 //using imported routes
-app.use("/", registrationRoutes);
+// app.use("/", registrationRoutes);
+app.use("/", registerbabyRoutes);
+app.use("/", landingRoutes);
+app.use("/", adminregisterRoutes);
+app.use("/", sitterRoutes);
 // app.use("/", authenticationRoutes);
 
 
@@ -65,4 +78,4 @@ app.get('*', (req, res) => {
 });
 
 //bootstrap server
-app.listen(port,()=> console.log(`listening on port ${port}`));
+app.listen(3000,()=> console.log(`listening on port ${3000}`));
