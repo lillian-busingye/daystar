@@ -19,8 +19,8 @@ html(lang="en")
       )
   body
     .container
-      h2 Sitters Dashboard
-      form#sittersForm
+      //- h2 Sitters Dashboard
+      //- form#sittersForm
         // Your form fields
       // Sitters Table
       h2 Sitters List
@@ -28,37 +28,48 @@ html(lang="en")
         thead
           tr
             th Full Name
-            th Location
-            th Date of Birth
-            th Gender
+            th Gender 
+            th Email 
+            th DateofBirth
             th Next of Kin
             th NIN
-            th Recommender's Name(s)
             th Religion
+            th Phone Number
+            th Address
+            th Experience
+            th Recommenders Name
             th Level of Education
+            th Role 
             th Sitter Number
-            th Contact
+            th Availability
             th Update
             th Delete
+
         tbody
          if sitters.length
          each sitter in sitters
           tr
             td #{sitter.name}
-            td #{sitter.location}
-            td #{sitter.dateofBirth}
             td #{sitter.gender}
-            td #{sitter.NextofKin}
-            td #{sitter.NIN}
-            td #{sitter.RecommendersName}
-            td #{sitter.Religion}
-            td #{sitter.LevelofEducation}
-            td #{sitter. SitterNumber}
-            td #{sitter.Contact}
+            td #{sitter.email}
+            td #{sitter.dateofBirth}
+            td #{sitter.nextofKin}
+            td #{sitter.nin}
+            td #{sitter.religion}
+            td #{sitter.phonenumber}
+            td #{sitter.currentAddress}
+            td #{sitter. Experience}
+            td #{sitter.recommendersname}
+            td #{sitter.levelofeducation}
+            td #{sitter.role}
+            td #{sitter.sitternumber}
+            td #{sitter.Availability}
             td 
-              a.btn.btn-primary.btn-sm(href="/sittersupdate/"+ sitter._id) Update
+             a.btn.btn-primary.btn-sm(href="/sittersupdate/"+ sitter._id) Update
             td 
-               a.btn.btn-danger.btn-sm(href="/delete") Delete 
+               form(method="POST" action="/sitterdelete")
+                   input(type="hidden" name="id" value=sitter._id)
+                   button.btn.btn-danger.btn-sm(type="submit") Delete
 
 
           // More rows can be added dynamically

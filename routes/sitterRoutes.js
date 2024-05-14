@@ -4,6 +4,7 @@ const router = express.Router();
 
 //import model
 const Sitter = require("../models/sitters");
+const sitters = require("../models/sitters");
 router.get("/Reg", (req, res) => {
   res.render("babysitter");
 });
@@ -24,9 +25,9 @@ router.post("/Reg", async (req, res) => {
   //sitter list from database
 router.get("/sitterlist", async (req, res) => {
   try {
-    const fetchedSitters = await Sitter.find(); //from line8
-    res.render("sitterlist", { sitters: fetchedSitters }); // to display sitters from data base
-    console.log("display sitters", fetchedSitters);
+    const Sitters = await Sitter.find(); //from line8
+    res.render("sitterlist", { sitters: Sitters }); // to display sitters from data base
+    console.log("display sitters", Sitters);
   } catch (error) {
     res.status(400).send("unable to find sitters from database!");
     console.log("unable to find sitters from database!...", error);
@@ -37,19 +38,22 @@ router.get("/sitterlist", async (req, res) => {
 router.get("/sittersupdate/:id", async (req, res) => {
   try {
      // Find the sitter by ID and update it
-    const sittersUpdate = await sitters.findOne({_id: req.params.id});
-    res.render("sittersUpdate", {sitter:sittersUpdate})
+    const sitter = await sitters.findById({_id: req.params.id});
+    res.render("sittersUpdate", { sitter: sitter })
 
 
   } catch (error) {
-    console.log("error finding a sitter!", error)
-    res.status(400).send("unable to update sitter in the db!");
+    console.log("error finding a sitter!", error);
+    res.status(400).send("unable to update sitter in the database");
   }
 });
 
 router.post("/sittersupdate", async(req, res)=> {
   try{
-    await sitters.findOneAndUpdate({_id: req.query}, req.body);
+    await sitters.findOneAndUpdate({ _id: req.query.id }, req.body, {
+      new: true,
+    });
+    console.log();
     res.redirect("/sitterlist")
   } catch (error) {
     res.status(404).send("unable to update sitter in the db!");
@@ -57,7 +61,7 @@ router.post("/sittersupdate", async(req, res)=> {
 });
 
 //delete route for form in database
-router.post("/delete", async (req, res) => {
+router.post("/sitterdelete", async (req, res) => {
   try {
     await sitters.deleteOne({ _id: req.body.id });
 

@@ -10,6 +10,10 @@ const babySchema = new mongoose.Schema({
     type:String,
     trim:true
  },
+ gender:{
+   type:String,
+   trim:true
+},
  parent:{
     type:String,
     trim:true
@@ -25,7 +29,11 @@ const babySchema = new mongoose.Schema({
  address:{
     type:String,
     trim:true
- }
+ },
+ babyNumber:{
+   type:String,
+   trim:true
+}
 
 });
 module.exports = mongoose.model('baby', babySchema );

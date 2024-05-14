@@ -17,35 +17,32 @@ html(lang="en")
       table.table.table-striped 
         thead
           tr
+            th(scope="col") Baby's Number
             th(scope="col") Baby's Name
-            th(scope="col") Baby's Age
-            th(scope="col") Baby's Gender
+            th(scope="col") Date of birth 
+            th(scope="col") Gender
             th(scope="col") Parent's Names
             th(scope="col") Parent's Contact
-            th(scope="col") Fee Paid (UGX)
-            th(scope="col") Period of Stay
-            th(scope="col") Child Number
+            th(scope="col") Email 
             th(scope="col") Location
-            th(scope="col") Checkin 
             th(scope="col") Delete
-            th(scope="col") Update  
+            th(scope="col") Update 
 
         tbody
          if babies.length
          each baby in babies
           tr
+            td #{baby.babyNumber}
             td #{baby.name}
-            td #{baby.age}
-            td #{baby.babygender}
-            td #{baby.fatherNames}
-            td #{baby.fatherContact}
-            td #{baby.schoolfeePaid}
-            td #{baby.babyperiodOfStay}
-            td #{baby.babychildNumber}
+            td #{baby.date}
+            td #{baby.gender}
+            td #{baby.parent}
+            td #{baby.contact}
+            td #{baby.email}
             td #{baby.address} 
-            td 
-              a.btn.btn-secondary.btn-sm(href="") Check In 
             td
-              a.btn.btn-danger.btn-sm(href="/delete") Delete 
+              form(method="POST" action="babydelete")
+                input(type="hidden" name="id" value=baby._id)
+                button.btn.btn-danger.btn-sm(type="submit") Delete 
             td   
               a.btn.btn-primary.btn-sm(href="/babiesupdate/"+ baby._id) Update

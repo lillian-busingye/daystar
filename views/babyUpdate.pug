@@ -1,0 +1,42 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  title Baby Update Form
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css')
+.container.my-5
+  h2.text-center Baby Update Form
+  form(method="POST" action="/babiesupdate?id="+baby._id)
+    // Baby Information
+    .mb-3
+      label.form-label(for='babyName') Baby&apos;s Name:
+      input#babyName.form-control(type='text' placeholder="Enter baby's name" name="name" value=baby.name)
+    .mb-3
+      label.form-label(for='babyDOB') Date of Birth:
+      input#babyDOB.form-control(type='date' name='date' value=baby.date)
+    .mb-3
+      label.form-label(for='gender') Gender:
+      select#gender.form-select(type='text' name='gender')
+        option(value='' selected='' disabled='') Choose...
+        option(value='male' selected=baby.gender='male') Male
+        option(value='female' selected=baby.gender='female') Female
+        option(value='other' selected=baby.gender='other') Other
+    // Parent/Guardian Information
+    .mb-3
+      label.form-label(for='parentName') Parent/Guardian&apos;s Name:
+      input#parentName.form-control(type='text' placeholder="Enter parent's/guardian's name" name="parent" value=baby.parent)
+    .mb-3
+      label.form-label(for='contactNumber') Contact Number:
+      input#contactNumber.form-control(type='tel' placeholder='Enter contact number' name='contact' value=baby.contact)
+    .mb-3
+      label.form-label(for='email') Email Address:
+      input#email.form-control(type='email' placeholder='Enter email address' name='email' value=baby.email)
+    // Address
+    .mb-3
+      label.form-label(for='address') Address:
+      textarea#address.form-control(rows='3' placeholder='Enter address' name='address' value=baby.address)
+    // Baby number
+    .mb-3
+      label.form-label(for='babyNumber') Baby&apos;s Number:
+      input#babyNumber.form-control(type='text' placeholder="Enter baby's number" name="babyNumber" value=baby.babyNumber)
+    button.btn.btn-primary(type='submit') Update 
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')

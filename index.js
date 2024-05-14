@@ -21,6 +21,8 @@ const registerbabyRoutes = require("./routes/registerbabyRoutes");
 const landingRoutes = require("./routes/landingRoutes");
 const adminregisterRoutes = require("./routes/adminregisterRoutes");
 const sitterRoutes = require("./routes/sitterRoutes");
+const aboutRoutes =require("./routes/aboutRoutes");
+
 
 // instantiations
 const app = express();
@@ -69,6 +71,7 @@ app.use("/", registerbabyRoutes);
 app.use("/", landingRoutes);
 app.use("/", adminregisterRoutes);
 app.use("/", sitterRoutes);
+app.use("/", aboutRoutes);
 // app.use("/", authenticationRoutes);
 
 

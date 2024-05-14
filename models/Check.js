@@ -18,7 +18,7 @@ personBrought: {
   },
   sitter: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "StaffRegistration"
+    ref: "sitters"
   },
   checkinTime: {
     type: String,

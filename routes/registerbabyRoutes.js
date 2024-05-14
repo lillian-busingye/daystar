@@ -4,6 +4,7 @@ const router = express.Router();
 //import model
 const BabyCheckInOut = require("../models/Check");
 const Baby = require("../models/registration");
+const StaffRegistration = require("../models/sitters");
 // const { post } = require("./");
 router.get("/register", (req, res) => {
   res.render("registerbaby");
@@ -36,11 +37,11 @@ router.get("/babylist", async (req, res) => {
 });
 
 // PUT API to update baby details
-router.put("/babiesupdate/:id", async (req, res) => {
+router.get("/babiesupdate/:id", async (req, res) => {
   try {
      // Find the baby by ID and update it
-    const babyUpdate = await Baby.findOne({_id: req.params.id});
-    res.render("babiesUpdate", {baby:babyUpdate})
+    const babyUpdate = await Baby.findById({_id: req.params.id});
+    res.render("babyUpdate", {baby:babyUpdate})
 
 
   } catch (error) {
@@ -49,8 +50,19 @@ router.put("/babiesupdate/:id", async (req, res) => {
   }
 });
 
+router.post("/babiesupdate", async(req, res)=> {
+  try{
+    await Baby.findOneAndUpdate({_id: req.query.id}, req.body, {
+      new: true,
+    });
+    res.redirect("/babylist")
+  } catch (error) {
+    res.status(404).send("unable to update baby in the db!");
+  }
+});
+
 //delete route for form in database
-router.post("/delete", async (req, res) => {
+router.post("/babydelete", async (req, res) => {
   try {
     await Baby.deleteOne({ _id: req.body.id });
 
@@ -63,4 +75,51 @@ router.post("/delete", async (req, res) => {
   }
 });
 
+// Route to render the check-in form
+router.get("/checkin", async (req, res) => {
+  try {
+    // Fetch available sitters from the database
+    const availableSitters = await StaffRegistration.find({ role: "Sitter" }).select('name');
+    console.log(availableSitters);
+    // Fetch list of babies from the database
+    const babies = await Baby.find();
+    // Render the check-in form with available sitters and babies
+    res.render("checkin", { availableSitters, babies });
+  } catch (error) {
+    console.error("Error rendering check-in form:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Route to handle check-in form submission
+router.post("/checkin", async (req, res) => {
+  try {
+    const newCheckin = new BabyCheckInOut(req.body);
+    newCheckin.checkinTime = new Date();
+    newCheckin.eventType = "checkin";
+
+    await newCheckin.save();
+
+    res.redirect("/checked");
+  } catch (error) {
+    console.error("Error checking in baby:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+//Route to display the list of checked-in babies
+router.get("/checked", async (req, res) => {
+  try {
+    // Fetch list of checked-in babies from the database
+    const checkedInBabies = await BabyCheckInOut.find({ eventType: "checkin" }).populate({ 
+    path: 'sitter',
+    select: 'name'
+  });
+    // Render the page with the list of checked-in babies
+    res.render("checked", { babies: checkedInBabies });
+  } catch (error) {
+    console.error("Error fetching checked-in babies:", error);
+    res.status(500).send("Internal Server Error");
+  }
+  });
 module.exports = router;
