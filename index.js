@@ -22,7 +22,10 @@ const landingRoutes = require("./routes/landingRoutes");
 const adminregisterRoutes = require("./routes/adminregisterRoutes");
 const sitterRoutes = require("./routes/sitterRoutes");
 const aboutRoutes =require("./routes/aboutRoutes");
-
+const adminloginRoutes = require("./routes/adminloginRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const dollStallRoutes = require("./routes/dollStallRoutes");
+const purchaseRoutes = require("./routes/purchaseRoutes");
 
 // instantiations
 const app = express();
@@ -47,9 +50,11 @@ app.set("view engine","pug"); // setting the view engine to pug
 app.set("views", path.join(__dirname,"views")); //specify the directory where the views are found
 //middleware
 app.use(express.static(path.join(__dirname, "public")))//set directory fot static fires 
+app.use('/public/images/images', express.static(__dirname +'/public/images/images'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(cors());
+
 // app.use(express.static(path.join(__dirname, "public"))) // Set directory for static files
 // app.use(express.urlencoded({extended:true}));
 // app.use(express.json());
@@ -72,6 +77,11 @@ app.use("/", landingRoutes);
 app.use("/", adminregisterRoutes);
 app.use("/", sitterRoutes);
 app.use("/", aboutRoutes);
+app.use("/", adminloginRoutes);
+app.use("/", dashboardRoutes);
+app.use("/", dollStallRoutes);
+app.use("/", purchaseRoutes);
+
 // app.use("/", authenticationRoutes);
 
 

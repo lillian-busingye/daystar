@@ -1,0 +1,44 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Purchase Update
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  
+include navbar
+header
+  
+main
+  .container
+    form#registrationForm(onsubmit='return validateForm()' action='/purchasesUpdate?id='+purchase._id method='POST')
+      h2 Purchase Update Form
+      .form-row
+        div(style='flex-basis: 28%')
+          label(for='item') Item:
+          select#item(name='item')
+            option(value='Fruits' selected= purchase.item=== 'fruits') Fruits
+            option(value='Milk' selected= purchase.item=== 'milk') Milk
+            option(value='Diapers' selected= purchase.item=== 'diapers') Diapers
+            option(value='Furniture' selected= purchase.item=== 'furniture') Furniture 
+        div(style='flex-basis: 12%')
+          label(for='dateOfPurchase') Date of Purchase:
+          input#dateOfPurchase(type='date' name='dateOfPurchase' value=purchase.dateOfPurchase)
+        div(style='flex-basis: 12%')
+          label(for='unit') Unit:
+          input#unit(type='text' name='unit' value=purchase.unit)
+        div(style='flex-basis: 10%')
+          label(for='quantity') Quantity:
+          input#quantity(type='number' name='quantity' value=purchase.quantity)
+        div(style='flex-basis: 16%')
+          label(for='rate') Rate (UGX):
+          input#rate(type='number' name='rate' value=purchase.rate)
+        div(style='flex-basis: 26%')
+          label(for='amount') Amount (UGX):
+          input#amount(type='number' name='amount' value=purchase.amount readonly)
+        button.btn.btn-success(type='submit' style='flex-basis: 12%') Update Purchase
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+script(src='/js/JS/addpurchase.js')
+
+

@@ -1,0 +1,43 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Add Doll
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='/css/addDoll.css')
+  include navbar
+header
+  
+  .container-addDoll
+    h2.h2-addDoll Add Doll 
+    form#registrationForm(onsubmit='return validateForm()' action='/dollAdd' method='POST' enctype='multipart/form-data')
+      .form-row
+        div
+          label(for='dollName') Doll Name:
+          input#dollName(type='text' name='dollName')
+        div
+          label(for='quantity') Quantity (Pcs):
+          input#quantity(type='number' name='quantity')
+      .form-row
+        div
+          label(for='rate') Rate (UGX):
+          input#rate(type='number' name='rate')
+        div
+        label(for='amount') Amount (UGX):
+          input#amount(type='number' name='amount')
+      .form-row
+        div
+          label(for='imageUpload') Upload Image:
+          input#imageUpload(type='file' name='imageUpload')
+        div
+          label(for='dateOfPurchase') Date of Purchase:
+          input#dateOfPurchase(type='date' name='dateOfPurchase')
+      .form-row
+        div
+          label(for='description') Description:
+          input#description(type='text' name='description' cols='30', rows='10')
+      button.btn-addDoll(type='submit') Add Doll
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+script(src='/js/JS/addDoll.js')

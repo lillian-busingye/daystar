@@ -1,0 +1,31 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Sell Doll
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='/css/addDoll.css')
+include navbar 
+.container-addDoll
+    h2.h2-addDoll Sell
+    form#registrationForm(onsubmit='return validateForm()' action='/sellDoll?id='+doll._id method='POST')
+        .form-row
+        div
+            label(for='dollName') Doll Name:
+            input#dollName(type='text' name='dollName' value=doll.dollName readonly)
+        div
+            label(for='dateOfSell') Date of Sell:
+            input#dateOfSell(type='date' name='dateOfSell')
+        .form-row
+        div
+            label(for='quantity') Quantity to Sell (Pcs):
+            input#quantity(type='number' name='quantity')
+        div
+            input#id(type='hidden' name='id' value=doll._id)
+            input#status(type='hidden' name='status')
+        button.btn-addDoll(type='submit') Sell Doll
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
+script(src='/js/JS/sellDoll.js')
+

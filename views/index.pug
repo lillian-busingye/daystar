@@ -14,10 +14,10 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
     #navbarSupportedContent.collapse.navbar-collapse
       ul.navbar-nav.me-auto.mb-2.mb-lg-0
         li.nav-item
-          a.nav-link.active(aria-current='page' href='/views/index.html') HOME
+          a.nav-link.active(aria-current='page' href='/') HOME
         li.nav-item
-          a.nav-link(href='/views/about.html') ABOUT
-        li.nav-item.dropdown
+          a.nav-link(href='/about') ABOUT
+        //- li.nav-item.dropdown
           a.nav-link.dropdown-toggle(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false')
             | REGISTRATION
           ul.dropdown-menu
@@ -33,7 +33,7 @@ nav.navbar.navbar-expand-lg.bg-body-tertiary
             li
               a.dropdown-item(href='/views/checkinandcheckout.html') CheckinandCheckout
       .d-flex(role='search')
-        button.btn.btn-outline-success(type='submit' style='margin-right: 40px;') DONATE TO US
+        a.button.btn.btn-outline-success(href='/login' role='button') LOGIN 
       .social-icons
         a.icon.facebook(href='#')
           i.fab.fa-facebook-f
@@ -51,7 +51,7 @@ header.container.mt-3(style='border-style: none;')
       b WELCOME TO DAYSTAR DAYCARE
     p.motto(style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; color: blue;") &quot;Your Child&apos;s Home Away from Home&quot;
   #carouselExampleAutoplaying.carousel.slide(data-bs-ride='carousel')
-    .carousel-inner(style='width: 100%;')
+    .carousel-inner(style='width: 80%;')
       .carousel-item.active
         img.d-block.w-100(src='/images/images/ABC-Kidcare-Logo-small@2x-1.png' alt='letters')
       .carousel-item

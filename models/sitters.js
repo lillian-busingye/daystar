@@ -63,6 +63,19 @@ const sittersSchema = new mongoose.Schema({
   role:{
     type:String,
     trim:true  
+  },
+  timeofArrival:{
+    type:String,
+    trim:true  
+  },
+  timeofDeparture:{
+    type:String,
+    trim:true  
+  },
+  status:{
+    type:String,
+    enum:['Present', 'Absent'],
+    trim:true  
   }
 
 });

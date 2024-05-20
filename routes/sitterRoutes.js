@@ -74,4 +74,76 @@ router.post("/sitterdelete", async (req, res) => {
   }
 });
 
+// Sitter check-in routes
+router.get("/sitterscheckin/:id", async (req, res) => {
+  try {
+    const checkInSitter = await sitters.findOne({ _id: req.params.id });
+    res.render("sittercheckin", {
+      sitter: checkInSitter,
+    });
+  } catch (error) {
+    console.log("Error fetching data for check-in", error);
+    res.status(400).send("Unable to find sitter in the db");
+  }
+});
+
+router.post("/sitterscheckin", async (req, res) => {
+  try {
+    await sitters.findOneAndUpdate({ _id: req.query.id }, req.body);
+    res.redirect("/sitterschecked");
+  } catch (error) {
+    console.log("Error checking-in sitter", error);
+    res.status(404).send("Unable to update sitter in the db");
+  }
+});
+
+// List of Checked-in sitters from the db
+router.get("/sitterschecked", async (req, res) => {
+  try {
+    let sittersCheckedIn = await sitters.find({ status: "Present" });
+    res.render("sitterchecked", {
+      sitters: sittersCheckedIn,
+    });
+    console.log("Display sitters checked-in", sittersCheckedIn);
+  } catch (error) {
+    res.status(400).send("Unable to find sitters available in the db");
+  }
+});
+
+// Sitter check-out routes
+router.get("/sitterscheckout/:id", async (req, res) => {
+  try {
+    // const sitters = await sitters.find();
+    const checkOutSitter = await sitters.findOne({ _id: req.params.id });
+
+    res.render("sittercheckout", {
+      sitter: checkOutSitter,
+      // sitters: sitters,
+    });
+  } catch (error) {
+    console.log("Error finding a sitter!", error);
+    res.status(400).send("unable to find sitter in the db!");
+  }
+});
+router.post("/sitterscheckout", async (req, res) => {
+  try {
+    await sitters.findOneAndUpdate({ _id: req.query.id }, req.body);
+    res.redirect("/sitterscheckedout");
+  } catch (error) {
+    res.status(404).send("Unable to update sitter in the db!");
+  }
+});
+// List of Checked-out sitters from the db
+router.get("/sitterscheckedout", async (req, res) => {
+  try {
+    let sittersCheckedOut = await sitters.find({ status: "Absent" });
+    res.render("sittercheckedout", { sitters: sittersCheckedOut });
+    console.log("Display sitters checked-out", sittersCheckedOut);
+  } catch (error) {
+    res.status(400).send("Unable to find sitter off in the db");
+    console.log("Unable to find sitters in the database", error);
+  }
+});
+
+
   module.exports = router;

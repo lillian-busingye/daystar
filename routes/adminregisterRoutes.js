@@ -18,7 +18,7 @@ router.post("/adminregister", async(req, res) => {
             if(err){
             throw err
         }
-        res.redirect("/adminregister")
+        res.redirect("/")
     })
 } catch (error) {
     res.status(400).send("user not registered")

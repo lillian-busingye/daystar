@@ -1,0 +1,48 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Admin Dashboard
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+//-   link(rel='stylesheet' href='/css/admin.css')
+include navbar
+//- .container-fluid
+header
+//-   include nav 
+main.mainAdmin
+  .container-adminDash
+    .row.row-cols-1.row-cols-md-2.g-4
+      .col
+        .card.shadow
+          .card-body
+            h2 UPDATES 
+            .cards-container
+              //- .card-toDo
+              //-   h5 Total Revenue 
+              //-   p Shs #{new Intl.NumberFormat().format(totalIncome)}
+              //- .card-toDo 
+              //-   h5 Total Expenses 
+              //-   p Shs #{new Intl.NumberFormat().format(totalExpense)}  
+              .card-toDo 
+                h5 Babies Registered
+                p #{enrolledBabies}
+              .card-toDo 
+                h5 Babies Present 
+                p #{babiesPresent}
+              .card-toDo 
+                h5 Sitters Registered 
+                p #{enrolledSitters}  
+              .card-toDo 
+                h5 Sitters Available
+                p #{sittersPresent}
+      .col
+        .card.shadow.todo-card
+          .card-body
+            h2 TO-DO LIST
+            input#taskInput(type='text' placeholder='Add new task...')
+            button.btn-toDo#addTaskButton ADD TASK 
+            button.btn-toDo#clearListButton CLEAR LIST 
+            ul#taskList
+script(src='/js/JS/dashboard.js')

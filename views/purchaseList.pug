@@ -1,0 +1,40 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Purchase List
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+
+include navbar
+header
+  
+main
+  .containerfluid
+    h3 Purchased Items
+    table.table.table-striped
+      thead
+        tr
+          th Item
+          th Date of Purchase
+          th Unit
+          th Quantity
+          th Rate (UGX)
+          th Amount (UGX)
+          th(colspan='2' style='text-align: center;') Action
+      tbody#purchaseTableBody
+        each purchase in purchases
+          tr
+            td #{purchase.item}
+            td #{purchase.dateOfPurchase}
+            td #{purchase.unit}
+            td #{purchase.quantity}
+            td #{new Intl.NumberFormat().format(purchase.rate)}
+            td #{new Intl.NumberFormat().format(purchase.amount)}
+            td
+              a.btn.btn-success(href='purchasesUpdate/'+purchase._id) Update
+            td  
+              form(action='/deleteItem' method='POST')
+                  input(type='hidden' name='id' value=purchase._id)
+                  button.btn.btn-danger(type='submit') Delete

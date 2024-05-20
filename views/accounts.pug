@@ -1,0 +1,28 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Add New record - Daycare Accounts Department 
+  link(rel='stylesheet' href='/css/style.css')
+  link(rel='stylesheet' href='/css/bootstrap/css/bootstrap.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  style.
+      .form-container {
+        border: 2px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        color: black;
+        background-color: #fff;
+      }
+include navbar
+a.btn.btn-secondary(href='/accrecords') Account's Record History 
+.row.justify-content-center 
+  .col-md-6.form-container 
+    h4.text-center.mb-4 Add New Record 
+    form#accountsform(action='/accounts' method='POST' onsubmit='return validation(event)' name='validationForm')
+      .form-group 
+        label Select Record Type: 
+        br
+        .form-check.form-check-inline
+           input#expenseRadio.form-check-input(type='radio' name='recordType' value='Expense' checked='')
+           label.form-check-label(for=)

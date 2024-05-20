@@ -17,10 +17,10 @@ const administerSchema = new mongoose.Schema({
     type:String,
     trim:true 
   },
-  password:{
-    type:String,
-    trim:true
-  },
+  // password:{
+  //   type:String,
+  //   trim:true
+  // },
 
   confirmPassword:{
     type:String,
