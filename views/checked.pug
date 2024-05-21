@@ -39,7 +39,7 @@ html(lang="en")
         tbody
           each baby in babies
             tr
-              td #{baby.babyName}
+              td #{baby.name}
               td #{baby.personBrought}
               td #{baby.contactBrought}
               td #{baby.periodOfStay}
@@ -52,5 +52,5 @@ html(lang="en")
                    input(type="hidden", name="_method", value="DELETE")
                    button.btn.btn-danger.btn-sm(type="submit") Delete  
               td  
-                a.btn.btn-success.btn-sm(type="button", href=`/checkout/${baby._id}`) Checkout
+                a.btn.btn-success.btn-sm(type="button", href=`/checkOutBaby/${baby._id}`) Checkout
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')

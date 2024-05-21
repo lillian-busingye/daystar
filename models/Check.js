@@ -3,8 +3,9 @@ const mongoose = require("mongoose");
 const babyCheckInOutSchema = new mongoose.Schema({
   babyName: {
     type: String,
-},
-personBrought: {
+    trim:true
+  },
+  personBrought: {
     type: String,
     trim: true
   },

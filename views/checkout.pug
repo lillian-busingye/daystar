@@ -18,11 +18,11 @@ html(lang='en')
   body 
     include navbar  
     .container
-      form#checkoutForm(action=`/checkout/${baby._id}` method='POST')
+      form#checkoutForm(action=`/checkOutBaby/${baby._id}` method='POST')
         h2.mb-4 Check Out Baby
         .form-group
           label(for='babyName') Baby's Name
-          input#babyName.form-control(type="text", name="babyName", value=babyName, readonly)
+          input#babyName.form-control(type="text", name="babyName", value=babyName,)
           .form-group
           label(for='personPickingUp') Person Picking Up
           input#personPickingUp.form-control(type='text' name='personPickingUp')

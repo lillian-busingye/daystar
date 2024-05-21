@@ -43,7 +43,7 @@ html(lang="en")
             td #{baby.email}
             td #{baby.address} 
             td   
-              a.btn.btn-primary.btn-sm(href="/checkin/"+baby._id) Checkin
+              a.btn.btn-primary.btn-sm(href="/checkInBaby/"+baby._id) Checkin
             td
               form(method="POST" action="babydelete")
                 input(type="hidden" name="id" value=baby._id)
