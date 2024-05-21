@@ -94,6 +94,7 @@ router.get("/checkInBaby/:id", async (req, res) => {
 
 router.post("/checkInBaby", async (req, res) => {
   try {
+    console.log('=======================', req.body)
     const newCheckin = new BabyCheckInOut(req.body);
     newCheckin.checkinTime = new Date();
     newCheckin.eventType = "checkin";
@@ -134,7 +135,7 @@ router.get("/checkOutBaby/:id", async (req, res) => {
 
     res.render("checkout", {
       baby: baby,
-      name: baby.name,
+      name: baby.babyName,
       
     });
   } catch (error) {
@@ -143,10 +144,16 @@ router.get("/checkOutBaby/:id", async (req, res) => {
   }
 });
 
-router.post("/checkOutBaby", async (req, res) => {
+router.post("/checkOutBaby/:id", async (req, res) => {
   try {
-    await BabyCheckInOut.findOneAndUpdate({ _id: req.query.id }, req.body);
-    res.redirect("/checkedOutBabies");
+    await BabyCheckInOut
+    .findOneAndUpdate({ _id: req.params.id },
+      {
+        ...req.body,
+        eventType: "checkout",
+        checkoutTime: new Date()
+      });
+    res.redirect("/checkedInBabies");
   } catch (error) {
     res.status(404).send("Unable to update baby in the db!");
   }

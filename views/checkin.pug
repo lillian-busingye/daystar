@@ -9,8 +9,8 @@ head
       h2.mb-4 Check In Baby
       form#checkinForm(action='/checkInBaby' method='POST')
         .form-group
-          label(for='name') Baby Name
-          input#name.form-control(type='text' name='name' value=baby.name readonly) 
+          label(for='babyName') Baby Name
+          input#name.form-control(type='text' name='babyName' value=baby.name readonly) 
         .form-group
           label(for='personBrought') Person Who Brought
           input#personBrought.form-control(type='text' name='personBrought' placeholder='Enter name of person who brought the baby')
