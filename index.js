@@ -26,6 +26,7 @@ const adminloginRoutes = require("./routes/adminloginRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const dollStallRoutes = require("./routes/dollStallRoutes");
 const purchaseRoutes = require("./routes/purchaseRoutes");
+const authRoutes = require("./routes/authRoutes");
 
 // instantiations
 const app = express();
@@ -81,7 +82,7 @@ app.use("/", adminloginRoutes);
 app.use("/", dashboardRoutes);
 app.use("/", dollStallRoutes);
 app.use("/", purchaseRoutes);
-
+app.use("/", authRoutes);
 // app.use("/", authenticationRoutes);
 
 
